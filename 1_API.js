@@ -31,16 +31,14 @@ const intervalId  = setInterval(()=>{
 // CLEAR INTERVAL
 clearInterval(intervalId)
 
-// START INTERVAL
-const Interval = function(){
-    console.log("PRINCE SHARMA")
-}
+// START INTERVAL AND CLEAR INTERVAL
+let interval;
 
-let intervalStartButton = document.querySelector('#startInterval').addEventListener('click' , ()=>{
-   let setInterval = (Interval, 2000)
+document.querySelector('#startInterval').addEventListener('click',()=>{
+    interval = setInterval( () => {
+        console.log("PRINCE SHARMA")
+    }, 1000)
 })
-
-// STOP INTERVAL
-document.querySelector('#stopInterval').addEventListener('click' , ()=>{
-    clearInterval(intervalStartButton)
+document.querySelector('#stopInterval').addEventListener('click', () => {
+    clearInterval(interval)
 })
